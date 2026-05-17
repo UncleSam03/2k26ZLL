@@ -4,19 +4,19 @@ import { Mail, Heart, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const scrollStoryData = [
-  { img: "1.png", text: "Hi. I am Samukeliso Mayabane but over the years I've accumulated a lot of names and personas, mostly I identify as nerd which I am and honestly love however that's not the case according to the public opinion, I behave like a gangster they say which I see why I am misconceptualised like that, I prefer the term hustleprenuer it sounds more socially acceptable." },
-  { img: "2.png", text: "Just a brief history about myself I started hustling at grade 3, never stopped since." },
-  { img: "3.png", text: "I gave up on the formal education system at age 17, I had gotten into finance, economics, world history and geopolitics ,it changed my perspective and I saw that the person I want to be cannot be accommodated by the current education system so I aligned myself as a capitalist and planned to start my first company by 21 and by the grace of God I did however it hasn't been going as planned to be honest there's still so much to learn on the field, I'm not in a hurry so I will be learning as much as a can and I will be practicing as I learn, can't shake the feeling that I am close to a win I just need to keep calm and continue this scary walk in the pitch black tunnel I am in. The company's name is Al VANGUARD, Vanguard is Latin for leading the way or frontlining, I am planning to change it at some point to Vanguard Technologies." },
-  { img: "4.png", text: "About 2 years ago I had a feeling maybe a calling to liberate the African youth, to start a mission to decolonise the brain of the youth spent a year trying to figure out how till it dawned on me that we grow up with the illusion that doing school and finishing will liberate one not being told the other side that it takes more than that, it needs interpersonal skills, a clear plan and a lot of intrinsic motivation, discipline and determination, finally a whole lot of adaptability so I started SkillsBridge Africa as an initiative to empower the youth with these skills." },
-  { img: "5.png", text: "So now I have 2 companies to grow simultaneously honestly it excites me 10% of the time the rest of the time I am just worried if I am equipped to handle this responsibility. I have a past, not a particularly clean one, I've spent most my late teenage hood and early adulthood living in the grey I will explain that in person it's a long story, at the moment all you have to know is that I have made a lot of mistakes some unavoidable as they were part of the learning process most were avoidable just allowed myself under the influence of being young. The important thing is that I have learnt and grown from them." },
-  { img: "6.png", text: "One mistake I regret from this year is my inability to take the opportunity to express clearly how I feel about you when the chance was handed to me. Well dwelling on that isn't helping me at all, I had to spend a deal of time alone figuring out what happened I used to be good at reading people." },
-  { img: "7.png", text: "Anyways that's just a snapshot of me I will answer any questions if you any." },
-  { img: "8.png", text: "There's no word that fits you more than the one your IG handle, it is a true embodiment of who you are, the Old French took it from Latin originally dux which translates to leader or sometimes military commander, the English then took it from old French referring to a noble woman which also accurately describes you, so Dutchess is a very powerful name which was the first thing that drew my interest." },
-  { img: "9.png", text: "I knew that I wanted to be with you from the first conversation we had the first day we met however I tackled myself because I doubted myself if I'd be able to fit in the role, it was the way you articulated yourself with a smile that both excited and crippled me, I had never met a person as driven, focused and beautiful all coupled in a woman Cleopatra would be jealous of." },
-  { img: "10.png", text: "A sense of humour that relaxes and a voice that calms it was nothing short of breathtaking yet again crippling. After my big fumble and a whole lot of sense being spoken by you I had to reset and I still appreciate that you didn't permanently shut the door." },
-  { img: "11.png", text: "It took me a minute to understand what I had to do to be able to show you that I am not planning on being just casual with you but to show you that I want to build with you, I want you by my side and me by your side as we journey this life thing, I hope I got it right this time. It is certainty, assurance that I am not all fun and games who is here for a good time not a long time and I do understand that you are not at the same place as you where when we began talking so I will dedicate my time to showing you that I don't care that they may be better packages out there (your words not mine) because that's not what is driving me to spend this much time writing and coding, what's driving me is something I cannot logically explain leaving me to conclude with absolute certainty that for the first time in a long time I am, hopelessly and stupidly in love with you" },
-  { img: "12.png", text: "and with each passing day knowing that you aren't with me hurts more I really wish I can finish this coding project quicker so I can give you this message just that the perfectionist in me won't give you anything mediocre I want to give you the best I can because you deserve nothing less. I know I could have done this Zulu love letter style but that ain't me I wanted to do it this way because I am passionate about my craft and I wanted to use it to express how I feel to someone whom I share a greater sentiment towards." },
-  { img: "13.png", text: "In a nutshell, this me officially asking you to be my girlfriend and letting you know that I will spend every waking day of my life showing you how special you are to me, how you important you are to me and make it my mission to enable myself to be in a position where I am able to give you the best life possible one filled with joy, peace and happiness. I really hope you say yes." }
+  { img: "1.webp", text: "Hi. I am Samukeliso Mayabane but over the years I've accumulated a lot of names and personas, mostly I identify as nerd which I am and honestly love however that's not the case according to the public opinion, I behave like a gangster they say which I see why I am misconceptualised like that, I prefer the term hustleprenuer it sounds more socially acceptable." },
+  { img: "2.webp", text: "Just a brief history about myself I started hustling at grade 3, never stopped since." },
+  { img: "3.webp", text: "I gave up on the formal education system at age 17, I had gotten into finance, economics, world history and geopolitics ,it changed my perspective and I saw that the person I want to be cannot be accommodated by the current education system so I aligned myself as a capitalist and planned to start my first company by 21 and by the grace of God I did however it hasn't been going as planned to be honest there's still so much to learn on the field, I'm not in a hurry so I will be learning as much as a can and I will be practicing as I learn, can't shake the feeling that I am close to a win I just need to keep calm and continue this scary walk in the pitch black tunnel I am in. The company's name is Al VANGUARD, Vanguard is Latin for leading the way or frontlining, I am planning to change it at some point to Vanguard Technologies." },
+  { img: "4.webp", text: "About 2 years ago I had a feeling maybe a calling to liberate the African youth, to start a mission to decolonise the brain of the youth spent a year trying to figure out how till it dawned on me that we grow up with the illusion that doing school and finishing will liberate one not being told the other side that it takes more than that, it needs interpersonal skills, a clear plan and a lot of intrinsic motivation, discipline and determination, finally a whole lot of adaptability so I started SkillsBridge Africa as an initiative to empower the youth with these skills." },
+  { img: "5.webp", text: "So now I have 2 companies to grow simultaneously honestly it excites me 10% of the time the rest of the time I am just worried if I am equipped to handle this responsibility. I have a past, not a particularly clean one, I've spent most my late teenage hood and early adulthood living in the grey I will explain that in person it's a long story, at the moment all you have to know is that I have made a lot of mistakes some unavoidable as they were part of the learning process most were avoidable just allowed myself under the influence of being young. The important thing is that I have learnt and grown from them." },
+  { img: "6.webp", text: "One mistake I regret from this year is my inability to take the opportunity to express clearly how I feel about you when the chance was handed to me. Well dwelling on that isn't helping me at all, I had to spend a deal of time alone figuring out what happened I used to be good at reading people." },
+  { img: "7.webp", text: "Anyways that's just a snapshot of me I will answer any questions if you any." },
+  { img: "8.webp", text: "There's no word that fits you more than the one your IG handle, it is a true embodiment of who you are, the Old French took it from Latin originally dux which translates to leader or sometimes military commander, the English then took it from old French referring to a noble woman which also accurately describes you, so Dutchess is a very powerful name which was the first thing that drew my interest." },
+  { img: "9.webp", text: "I knew that I wanted to be with you from the first conversation we had the first day we met however I tackled myself because I doubted myself if I'd be able to fit in the role, it was the way you articulated yourself with a smile that both excited and crippled me, I had never met a person as driven, focused and beautiful all coupled in a woman Cleopatra would be jealous of." },
+  { img: "10.webp", text: "A sense of humour that relaxes and a voice that calms it was nothing short of breathtaking yet again crippling. After my big fumble and a whole lot of sense being spoken by you I had to reset and I still appreciate that you didn't permanently shut the door." },
+  { img: "11.webp", text: "It took me a minute to understand what I had to do to be able to show you that I am not planning on being just casual with you but to show you that I want to build with you, I want you by my side and me by your side as we journey this life thing, I hope I got it right this time. It is certainty, assurance that I am not all fun and games who is here for a good time not a long time and I do understand that you are not at the same place as you where when we began talking so I will dedicate my time to showing you that I don't care that they may be better packages out there (your words not mine) because that's not what is driving me to spend this much time writing and coding, what's driving me is something I cannot logically explain leaving me to conclude with absolute certainty that for the first time in a long time I am, hopelessly and stupidly in love with you" },
+  { img: "12.webp", text: "and with each passing day knowing that you aren't with me hurts more I really wish I can finish this coding project quicker so I can give you this message just that the perfectionist in me won't give you anything mediocre I want to give you the best I can because you deserve nothing less. I know I could have done this Zulu love letter style but that ain't me I wanted to do it this way because I am passionate about my craft and I wanted to use it to express how I feel to someone whom I share a greater sentiment towards." },
+  { img: "13.webp", text: "In a nutshell, this me officially asking you to be my girlfriend and letting you know that I will spend every waking day of my life showing you how special you are to me, how you important you are to me and make it my mission to enable myself to be in a position where I am able to give you the best life possible one filled with joy, peace and happiness. I really hope you say yes." }
 ];
 
 const SakuraPetals = () => {
@@ -153,7 +153,7 @@ const Page1 = ({ onNext }) => (
         initial={{ y: 15 }}
         animate={{ y: -5 }}
         transition={{ repeat: Infinity, duration: 3, repeatType: "reverse", ease: "easeInOut" }}
-        src="/Fides waving.png" alt="Waving" 
+        src="/Fides waving.webp" alt="Waving" 
         className="w-full max-w-[320px] md:max-w-md character-image drop-shadow-2xl relative z-10"
       />
       <motion.div
@@ -196,7 +196,7 @@ const Page2 = ({ onNext }) => (
     className="w-full max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 h-screen absolute inset-0 z-10"
   >
     <div className="relative flex-1 flex justify-center items-center w-full">
-      <motion.img src="/Page 2 Image 1.png" alt="Smirk" className="w-full max-w-[320px] md:max-w-md character-image drop-shadow-2xl relative z-10" />
+      <motion.img src="/Page 2 Image 1.webp" alt="Smirk" className="w-full max-w-[320px] md:max-w-md character-image drop-shadow-2xl relative z-10" />
       <motion.div
         initial={{ opacity: 0, scale: 0.8, y: 20, rotate: 2 }}
         animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
@@ -241,7 +241,7 @@ const Page3 = ({ onAction }) => (
         initial={{ x: -30, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-        src="/Let's Go.png" alt="Pointing" 
+        src="/Let's Go.webp" alt="Pointing" 
         className="w-full max-w-[320px] md:max-w-md character-image drop-shadow-2xl relative z-10 md:translate-x-12"
       />
       <motion.div
@@ -383,7 +383,7 @@ const SideNote = ({ onNext }) => {
             initial={{ y: 10 }}
             animate={{ y: -10 }}
             transition={{ repeat: Infinity, duration: 3, repeatType: "reverse", ease: "easeInOut" }}
-            src="/14.png"
+            src="/14.webp"
             alt="Supportive"
             className="w-full max-w-[320px] md:max-w-md drop-shadow-2xl character-image"
             onError={(e) => { e.target.style.display = 'none'; }}
@@ -436,7 +436,7 @@ const FinalDecision = () => {
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 0.3, type: "spring", bounce: 0.4 }}
-            src="/9.png"
+            src="/9.webp"
             alt="Joyful"
             className="w-48 md:w-80 h-auto drop-shadow-2xl character-image"
             onError={(e) => { e.target.style.display = 'none'; }}
