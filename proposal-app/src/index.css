@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-primary: #ffffff;
+  --color-accent: #e11d48;
+}
+
+body {
+  @apply bg-primary text-gray-800 m-0 p-0 overflow-hidden font-sans;
+}
+
+/* Remove image backgrounds as requested */
+.character-image {
+  filter: contrast(1.05) brightness(1.02); /* Slight pop for anime style */
+}
+
+/* Anime Romance Styles */
+.sakura-petal {
+  position: absolute;
+  background: linear-gradient(135deg, #ffb7c5, #ff9eaf);
+  border-radius: 15px 0 15px 0;
+  opacity: 0.7;
+  box-shadow: 0 0 15px rgba(255, 183, 197, 0.6);
+  pointer-events: none;
+  z-index: 0;
+}
+
