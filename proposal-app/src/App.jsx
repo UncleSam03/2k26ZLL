@@ -97,7 +97,7 @@ const Envelope = ({ onOpen }) => (
       <motion.div 
         whileHover={{ scale: 1.05, rotateX: 10, rotateY: -10, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.5)" }}
         whileTap={{ scale: 0.95, rotateX: 0, rotateY: 0 }}
-        className="relative bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border-2 border-rose-100 flex flex-col items-center justify-center min-w-[320px] md:min-w-[420px] h-[260px] transform-gpu transition-all duration-300"
+        className="relative bg-white/95 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl border-2 border-rose-100 flex flex-col items-center justify-center min-w-[280px] md:min-w-[420px] h-[260px] transform-gpu transition-all duration-300 w-[90%] md:w-auto"
       >
         <motion.div 
           animate={{ scale: [1, 1.15, 1] }}
@@ -120,7 +120,7 @@ const Envelope = ({ onOpen }) => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6, type: "spring" }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-rose-800 to-gray-900 bg-clip-text text-transparent font-['Outfit'] pb-2"
+            className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-rose-800 to-gray-900 bg-clip-text text-transparent font-['Outfit'] pb-2"
           >
             Zinhle Mndzebele
           </motion.h1>
@@ -168,7 +168,7 @@ const Page1 = ({ onNext }) => (
           whileHover={{ scale: 1.05, rotate: 2 }}
           className="bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px]"
         >
-          <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
+          <p className="text-gray-800 font-medium text-base md:text-xl leading-relaxed">
             "Hi Dutchess. The first time I tried this you said I was scripted"
           </p>
         </motion.div>
@@ -179,7 +179,7 @@ const Page1 = ({ onNext }) => (
         whileHover={{ scale: 1.05, x: 5 }}
         whileTap={{ scale: 0.95 }}
         onClick={onNext}
-        className="bg-gray-900 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-[0_8px_15px_-3px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.3)] transition-all flex items-center gap-2"
+        className="bg-gray-900 text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg shadow-[0_8px_15px_-3px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.3)] transition-all flex items-center gap-2"
       >
         Next Page <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </motion.button>
@@ -209,7 +209,7 @@ const Page2 = ({ onNext }) => (
           whileHover={{ scale: 1.05, rotate: -2 }}
           className="bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px]"
         >
-          <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
+          <p className="text-gray-800 font-medium text-base md:text-xl leading-relaxed">
             "....well this time type I certainly am"
           </p>
         </motion.div>
@@ -220,7 +220,7 @@ const Page2 = ({ onNext }) => (
         whileHover={{ scale: 1.05, x: 5 }}
         whileTap={{ scale: 0.95 }}
         onClick={onNext}
-        className="bg-gray-900 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-[0_8px_15px_-3px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.3)] transition-all flex items-center gap-2"
+        className="bg-gray-900 text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg shadow-[0_8px_15px_-3px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_25px_-5px_rgba(0,0,0,0.3)] transition-all flex items-center gap-2"
       >
         Next <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
       </motion.button>
@@ -266,7 +266,7 @@ const Page3 = ({ onAction }) => (
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
           onClick={onAction}
-          className="group relative bg-gradient-to-r from-rose-500 to-pink-500 text-white px-14 py-6 rounded-full font-bold text-2xl md:text-3xl shadow-[0_15px_35px_-10px_rgba(225,29,72,0.6)] transition-all overflow-hidden"
+          className="group relative bg-gradient-to-r from-rose-500 to-pink-500 text-white px-10 md:px-14 py-4 md:py-6 rounded-full font-bold text-xl md:text-3xl shadow-[0_15px_35px_-10px_rgba(225,29,72,0.6)] transition-all overflow-hidden"
         >
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
           <span className="relative z-10 flex items-center gap-3">Let's Go <Heart className="w-6 h-6 fill-white" /></span>
@@ -334,7 +334,7 @@ const ScrollStory = ({ onNext }) => {
                 <motion.div 
                   animate={{ y: [0, -5, 0] }}
                   transition={{ repeat: Infinity, duration: 4 + (i % 2), ease: "easeInOut", delay: i * 0.2 }}
-                  className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-rose-50 text-gray-800 text-lg md:text-xl leading-relaxed relative"
+                  className="bg-white/95 backdrop-blur-sm p-6 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-rose-50 text-gray-800 text-base md:text-xl leading-relaxed relative"
                 >
                   <div className={`absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-white border border-rose-50 rotate-45 ${isEven ? '-left-3 border-r-0 border-t-0 hidden md:block' : '-right-3 border-l-0 border-b-0 hidden md:block'}`}></div>
                   <p className="font-medium whitespace-pre-wrap">{item.text}</p>
@@ -352,7 +352,7 @@ const ScrollStory = ({ onNext }) => {
         >
           <button
             onClick={onNext}
-            className="bg-gray-900 text-white px-14 py-6 rounded-full font-bold text-xl shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4)] transition-all hover:-translate-y-2 hover:shadow-[0_25px_40px_-15px_rgba(0,0,0,0.5)] flex items-center gap-3"
+            className="bg-gray-900 text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4)] transition-all hover:-translate-y-2 hover:shadow-[0_25px_40px_-15px_rgba(0,0,0,0.5)] flex items-center gap-3"
           >
             Continue to Note <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </button>
@@ -371,7 +371,7 @@ const SideNote = ({ onNext }) => {
       transition={{ duration: 0.8 }}
       className="w-full h-screen absolute inset-0 z-40 bg-transparent flex items-center justify-center p-6 overflow-y-auto"
     >
-      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 bg-white/90 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] shadow-2xl border border-white relative overflow-hidden">
+      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 bg-white/90 backdrop-blur-xl p-6 md:p-16 rounded-[3rem] shadow-2xl border border-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-rose-200 to-pink-200 rounded-full blur-[100px] opacity-40 -z-10 translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-pink-200 to-rose-100 rounded-full blur-[80px] opacity-40 -z-10 -translate-x-1/3 translate-y-1/3"></div>
         
@@ -388,15 +388,15 @@ const SideNote = ({ onNext }) => {
         </div>
         
         <div className="flex-1 flex flex-col items-start gap-8 z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-rose-500 font-['Outfit'] tracking-tight">Side note...</h2>
-          <p className="text-gray-700 text-xl leading-relaxed font-medium">
+          <h2 className="text-3xl md:text-5xl font-bold text-rose-500 font-['Outfit'] tracking-tight">Side note...</h2>
+          <p className="text-gray-700 text-base md:text-xl leading-relaxed font-medium">
             The reason why I bought the domain is that I genuinely believe in you not just as a hustler but a powerhouse of a businesswoman. So regardless of what you say, we will transform this domain into a website that will be your step 0 into you building your business. Whatever you choose it to be, I will build it and help you direct traffic to it and making sure that it converts.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onNext}
-            className="mt-6 bg-rose-500 text-white px-10 py-5 rounded-full font-bold text-xl shadow-[0_10px_20px_-5px_rgba(244,63,94,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(244,63,94,0.5)] transition-all flex items-center gap-2"
+            className="mt-6 bg-rose-500 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-xl shadow-[0_10px_20px_-5px_rgba(244,63,94,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(244,63,94,0.5)] transition-all flex items-center gap-2"
           >
             Read Final Message <Mail className="w-5 h-5 ml-1" />
           </motion.button>
@@ -443,9 +443,9 @@ const FinalDecision = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="bg-white/80 backdrop-blur-md p-6 md:p-12 rounded-[2rem] border border-rose-100 shadow-xl w-full"
+            className="bg-white/80 backdrop-blur-md p-5 md:p-12 rounded-[2rem] border border-rose-100 shadow-xl w-full"
           >
-            <p className="text-xl md:text-3xl text-gray-800 font-medium leading-relaxed whitespace-pre-wrap">
+            <p className="text-lg md:text-3xl text-gray-800 font-medium leading-relaxed whitespace-pre-wrap">
               Looking forward to your response{"\n\n"}
               Kind regards,{"\n"}
               <span className="font-bold text-rose-500">A dumb idiot that loves you</span>
@@ -462,10 +462,10 @@ const FinalDecision = () => {
                 transition={{ delay: 1 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-4 w-full sm:w-auto"
               >
-                <button onClick={handleChoice} className="w-full sm:w-auto bg-gray-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                <button onClick={handleChoice} className="w-full sm:w-auto bg-gray-900 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
                   YES!
                 </button>
-                <button onClick={handleChoice} className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-600 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl shadow-[0_10px_20px_-5px_rgba(225,29,72,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all hover:ring-4 ring-rose-200">
+                <button onClick={handleChoice} className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-600 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-[0_10px_20px_-5px_rgba(225,29,72,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all hover:ring-4 ring-rose-200">
                   ABSOLUTELY YES!
                 </button>
               </motion.div>
@@ -477,7 +477,7 @@ const FinalDecision = () => {
               transition={{ type: "spring", bounce: 0.6 }}
               className="mt-4 bg-rose-50 px-8 py-5 rounded-full border border-rose-200 shadow-xl inline-block"
             >
-              <p className="text-2xl md:text-3xl font-bold text-rose-600 flex items-center justify-center gap-3">
+              <p className="text-xl md:text-3xl font-bold text-rose-600 flex items-center justify-center gap-3">
                 Best choice ever. <Heart className="fill-current text-rose-500 w-8 h-8" /> See you soon, Dutchess.
               </p>
             </motion.div>
