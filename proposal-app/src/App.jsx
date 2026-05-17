@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Heart, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -277,8 +277,11 @@ const Page3 = ({ onAction }) => (
 );
 
 const ScrollStory = ({ onNext }) => {
+  const scrollRef = useRef(null);
+
   return (
     <motion.div
+      ref={scrollRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, filter: 'blur(10px)' }}
@@ -293,7 +296,7 @@ const ScrollStory = ({ onNext }) => {
               key={i}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-15%" }}
+              viewport={{ root: scrollRef, once: true, margin: "-15%" }}
               transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
               className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 relative`}
             >
@@ -347,7 +350,7 @@ const ScrollStory = ({ onNext }) => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ root: scrollRef, once: true }}
           className="flex justify-center mt-10"
         >
           <button
