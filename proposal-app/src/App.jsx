@@ -71,29 +71,72 @@ const Envelope = ({ onOpen }) => (
   <motion.div
     initial={{ scale: 0.8, opacity: 0 }}
     animate={{ scale: 1, opacity: 1 }}
-    exit={{ scale: 1.2, opacity: 0, filter: 'blur(10px)' }}
+    exit={{ scale: 1.5, opacity: 0, filter: 'blur(15px)', rotate: 5 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="flex flex-col items-center justify-center cursor-pointer group w-full h-full absolute inset-0 z-10"
     onClick={onOpen}
+    style={{ perspective: 1000 }}
   >
     <motion.div 
-      whileHover={{ scale: 1.05, y: -10 }}
-      whileTap={{ scale: 0.95 }}
-      className="relative bg-white p-10 rounded-2xl shadow-xl border border-rose-100 flex flex-col items-center justify-center min-w-[320px] md:min-w-[400px] h-[250px] z-10"
+      animate={{ y: [-15, 15, -15], rotateZ: [-1, 1, -1] }}
+      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+      className="relative z-10 flex items-center justify-center"
     >
-      <div className="absolute -top-6 bg-rose-500 rounded-full p-4 shadow-lg group-hover:shadow-rose-500/50 transition-all duration-300">
-        <Heart className="w-8 h-8 text-white fill-current" />
-      </div>
-      <div className="mt-8 text-center">
-        <p className="text-gray-400 uppercase tracking-widest text-sm font-semibold mb-2">For</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 font-['Outfit']">Zinhle Mndzebele</h1>
-      </div>
-      <div className="absolute bottom-6 text-rose-400 flex items-center gap-2 opacity-70 group-hover:opacity-100 transition-opacity">
-        <Mail className="w-4 h-4" />
-        <span className="text-sm font-medium">Click to open</span>
-      </div>
+      {/* Expanding glow rings */}
+      <motion.div
+        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+        className="absolute w-[350px] h-[250px] bg-rose-300 rounded-[3rem] blur-2xl -z-20"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.8, 0, 0.8] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.5 }}
+        className="absolute w-[350px] h-[250px] bg-pink-300 rounded-[3rem] blur-xl -z-10"
+      />
+
+      <motion.div 
+        whileHover={{ scale: 1.05, rotateX: 10, rotateY: -10, boxShadow: "0 25px 50px -12px rgba(225,29,72,0.5)" }}
+        whileTap={{ scale: 0.95, rotateX: 0, rotateY: 0 }}
+        className="relative bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border-2 border-rose-100 flex flex-col items-center justify-center min-w-[320px] md:min-w-[420px] h-[260px] transform-gpu transition-all duration-300"
+      >
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+          className="absolute -top-8 bg-gradient-to-tr from-rose-500 to-pink-500 rounded-full p-5 shadow-[0_10px_20px_-5px_rgba(225,29,72,0.6)] group-hover:shadow-[0_15px_30px_-5px_rgba(225,29,72,0.8)]"
+        >
+          <Heart className="w-8 h-8 text-white fill-current" />
+        </motion.div>
+        
+        <div className="mt-8 text-center overflow-hidden">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-gray-400 uppercase tracking-[0.3em] text-sm font-bold mb-3"
+          >
+            For
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6, type: "spring" }}
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-rose-800 to-gray-900 bg-clip-text text-transparent font-['Outfit'] pb-2"
+          >
+            Zinhle Mndzebele
+          </motion.h1>
+        </div>
+        
+        <motion.div 
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="absolute bottom-6 text-rose-500 flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity font-bold"
+        >
+          <Mail className="w-5 h-5" />
+          <span className="text-sm tracking-widest uppercase">Click to open</span>
+        </motion.div>
+      </motion.div>
     </motion.div>
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] bg-rose-200/50 rounded-full blur-[100px] -z-10" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-rose-200/40 rounded-full blur-[120px] -z-20 pointer-events-none" />
   </motion.div>
 );
 
@@ -117,11 +160,18 @@ const Page1 = ({ onNext }) => (
         initial={{ opacity: 0, scale: 0.8, y: 20, rotate: -5 }}
         animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
         transition={{ delay: 0.4, type: "spring", bounce: 0.5 }}
-        className="absolute top-[5%] md:top-[15%] right-[0%] md:-right-[10%] bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px] z-20"
+        className="absolute top-[5%] md:top-[15%] right-[0%] md:-right-[10%] z-20"
       >
-        <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
-          "Hi Dutchess. The first time I tried this you said I was scripted"
-        </p>
+        <motion.div
+          animate={{ y: [-5, 5, -5] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+          whileHover={{ scale: 1.05, rotate: 2 }}
+          className="bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px]"
+        >
+          <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
+            "Hi Dutchess. The first time I tried this you said I was scripted"
+          </p>
+        </motion.div>
       </motion.div>
     </div>
     <div className="flex-1 flex justify-center md:justify-start mt-8 md:mt-0">
@@ -151,11 +201,18 @@ const Page2 = ({ onNext }) => (
         initial={{ opacity: 0, scale: 0.8, y: 20, rotate: 2 }}
         animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
         transition={{ delay: 0.3, type: "spring", bounce: 0.5 }}
-        className="absolute top-[10%] md:top-[15%] right-0 md:-right-[10%] bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px] z-20"
+        className="absolute top-[10%] md:top-[15%] right-0 md:-right-[10%] z-20"
       >
-        <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
-          "....well this time type I certainly am"
-        </p>
+        <motion.div
+          animate={{ y: [-4, 4, -4] }}
+          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          whileHover={{ scale: 1.05, rotate: -2 }}
+          className="bg-white px-6 py-5 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 max-w-[280px]"
+        >
+          <p className="text-gray-800 font-medium text-lg md:text-xl leading-relaxed">
+            "....well this time type I certainly am"
+          </p>
+        </motion.div>
       </motion.div>
     </div>
     <div className="flex-1 flex justify-center md:justify-start mt-8 md:mt-0">
@@ -191,9 +248,16 @@ const Page3 = ({ onAction }) => (
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.2, type: "spring", bounce: 0.5 }}
-        className="absolute bottom-[5%] left-[5%] md:left-[10%] bg-rose-50 px-5 py-3 rounded-2xl rounded-tr-none shadow-lg border border-rose-100 rotate-[-8deg] z-20"
+        className="absolute bottom-[5%] left-[5%] md:left-[10%] z-20"
       >
-        <p className="text-rose-600 font-semibold text-sm md:text-base">"You look great BTW" ✨</p>
+        <motion.div
+          animate={{ y: [-3, 3, -3] }}
+          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+          whileHover={{ scale: 1.05 }}
+          className="bg-rose-50 px-5 py-3 rounded-2xl rounded-tr-none shadow-lg border border-rose-100 rotate-[-8deg]"
+        >
+          <p className="text-rose-600 font-semibold text-sm md:text-base">"You look great BTW" ✨</p>
+        </motion.div>
       </motion.div>
     </div>
     <div className="flex-1 flex justify-center md:justify-start items-center relative z-20 mt-[-2rem] md:mt-0">
@@ -263,12 +327,19 @@ const ScrollStory = ({ onNext }) => {
                   }}
                 />
               </div>
-              <div className="flex-1 w-full">
-                <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-rose-50 text-gray-800 text-lg md:text-xl leading-relaxed relative">
+              <motion.div 
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="flex-1 w-full"
+              >
+                <motion.div 
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ repeat: Infinity, duration: 4 + (i % 2), ease: "easeInOut", delay: i * 0.2 }}
+                  className="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-rose-50 text-gray-800 text-lg md:text-xl leading-relaxed relative"
+                >
                   <div className={`absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-white border border-rose-50 rotate-45 ${isEven ? '-left-3 border-r-0 border-t-0 hidden md:block' : '-right-3 border-l-0 border-b-0 hidden md:block'}`}></div>
                   <p className="font-medium whitespace-pre-wrap">{item.text}</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           );
         })}
@@ -298,7 +369,7 @@ const SideNote = ({ onNext }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.8 }}
-      className="w-full h-screen absolute inset-0 z-40 bg-rose-50 flex items-center justify-center p-6 overflow-y-auto"
+      className="w-full h-screen absolute inset-0 z-40 bg-transparent flex items-center justify-center p-6 overflow-y-auto"
     >
       <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12 bg-white/90 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] shadow-2xl border border-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-rose-200 to-pink-200 rounded-full blur-[100px] opacity-40 -z-10 translate-x-1/3 -translate-y-1/3"></div>
@@ -353,10 +424,8 @@ const FinalDecision = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full h-full absolute inset-0 z-50 bg-white overflow-y-auto overflow-x-hidden"
+      className="w-full h-full absolute inset-0 z-50 bg-transparent overflow-y-auto overflow-x-hidden"
     >
-      <div className="fixed inset-0 bg-gradient-to-b from-rose-50/50 to-white/90 pointer-events-none z-0"></div>
-      <SakuraPetals />
       
       <div className="min-h-full w-full flex flex-col items-center justify-center py-12 px-6">
         <div className="max-w-4xl w-full flex flex-col items-center text-center gap-8 md:gap-10 relative z-10">
@@ -436,16 +505,14 @@ export default function App() {
 
   return (
     <div className="h-screen w-full relative bg-white overflow-hidden flex items-center justify-center font-['Inter']">
-      {/* Background Anime Romance Elements - Only active on absolute positioned pages */}
-      {step < 4 && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-b from-rose-50/40 to-white/90 pointer-events-none z-0"></div>
-          <SakuraPetals />
-          <FloatingHearts />
-          <div className="absolute top-[15%] left-[10%] animate-pulse text-rose-300/50 z-0"><Sparkles size={56} /></div>
-          <div className="absolute bottom-[20%] right-[10%] animate-pulse text-rose-300/50 z-0 delay-700"><Sparkles size={72} /></div>
-        </>
-      )}
+      {/* Background Anime Romance Elements - Active globally */}
+      <>
+        <div className="absolute inset-0 bg-gradient-to-b from-rose-50/40 to-white/90 pointer-events-none z-0"></div>
+        <SakuraPetals />
+        <FloatingHearts />
+        <div className="absolute top-[15%] left-[10%] animate-pulse text-rose-300/50 z-0"><Sparkles size={56} /></div>
+        <div className="absolute bottom-[20%] right-[10%] animate-pulse text-rose-300/50 z-0 delay-700"><Sparkles size={72} /></div>
+      </>
 
       <AnimatePresence mode="wait">
         {step === 0 && <Envelope key="envelope" onOpen={handleNext} />}
