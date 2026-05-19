@@ -412,8 +412,32 @@ const SideNote = ({ onNext }) => {
 const FinalDecision = () => {
   const [celebrated, setCelebrated] = useState(false);
 
-  const handleChoice = () => {
+  const sendTelegramNotification = async (buttonChoice) => {
+    const BOT_TOKEN = "8957518251:AAH0i0Ld4Ef3ELiNBzCfnyEPSWieK-DcDyU"; 
+    const CHAT_ID = "6509493588"; 
+    
+    const message = `🚨 THE DUTCHESS SAID YES! 🚨\n\nZinhle clicked the "${buttonChoice}" button! 💍✨❤️`;
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    try {
+      await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: "Markdown"
+        })
+      });
+    } catch (error) {
+      console.error("Error sending Telegram message:", error);
+    }
+  };
+
+  const handleChoice = (choice) => {
     setCelebrated(true);
+    sendTelegramNotification(choice);
+    
     const duration = 4000;
     const end = Date.now() + duration;
     (function frame() {
@@ -465,10 +489,10 @@ const FinalDecision = () => {
                 transition={{ delay: 1 }}
                 className="flex flex-col sm:flex-row gap-4 md:gap-6 mt-4 w-full sm:w-auto"
               >
-                <button onClick={handleChoice} className="w-full sm:w-auto bg-gray-900 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                <button onClick={() => handleChoice("YES!")} className="w-full sm:w-auto bg-gray-900 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
                   YES!
                 </button>
-                <button onClick={handleChoice} className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-600 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-[0_10px_20px_-5px_rgba(225,29,72,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all hover:ring-4 ring-rose-200">
+                <button onClick={() => handleChoice("ABSOLUTELY YES!")} className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-600 text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-[0_10px_20px_-5px_rgba(225,29,72,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all hover:ring-4 ring-rose-200">
                   ABSOLUTELY YES!
                 </button>
               </motion.div>
